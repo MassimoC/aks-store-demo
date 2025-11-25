@@ -8,7 +8,13 @@ describe('TopNav', () => {
     const wrapper = mount(TopNav)
     expect(wrapper.find('nav').exists()).toBe(true)
     expect(wrapper.find('.logo').exists()).toBe(true)
-    expect(wrapper.find('.logo-text').text()).toContain("Santa's Workshop")
+    expect(wrapper.find('.logo-text').text()).toContain('Elf Workshop')
+  })
+
+  it('displays elf logo', () => {
+    const wrapper = mount(TopNav)
+    expect(wrapper.find('.elf-logo').exists()).toBe(true)
+    expect(wrapper.find('.elf-logo').text()).toContain('🧝')
   })
 
   it('contains navigation links', () => {

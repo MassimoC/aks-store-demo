@@ -2,9 +2,9 @@
   <nav>
     <div class="logo">
       <router-link to="/">
-        <img src="/santa-store-logo.png" alt="Santa Store Logo" />
+        <span class="elf-logo">🧝‍♂️🎄🧝‍♀️</span>
       </router-link>
-      <span class="logo-text">🎄 Santa's Workshop 🎅</span>
+      <span class="logo-text">🎄 Elf Workshop 🎅</span>
     </div>
     <ul class="nav-links" :class="{ 'nav-links--open': isNavOpen }">
       <li><router-link to="/orders" @click="closeNav">📦 Orders</router-link></li>
@@ -66,6 +66,13 @@ nav img {
   width: 100px;
   height: auto;
   align-self: center;
+}
+
+.elf-logo {
+  font-size: 2.5rem;
+  padding-right: 15px;
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .logo-text {
