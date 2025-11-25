@@ -1,6 +1,6 @@
 # AKS Store Demo E2E Tests
 
-This directory contains comprehensive Playwright end-to-end tests for the AKS Store Demo applications, including both the store front and store admin portals.
+This directory contains comprehensive Playwright end-to-end tests for the AKS Store Demo applications, including both the store front and store Elf operations center s.
 
 ## Test Structure
 
@@ -127,7 +127,7 @@ npm run test:traffic:headed              # Traffic tests with visible browser
 ### 🛠️ **Store Admin Tests**
 
 #### Basic Tests
-- Admin portal page loading and title verification
+- Elf operations center  page loading and title verification
 - Navigation to Products management page
 - Basic page rendering verification
 - Company branding consistency

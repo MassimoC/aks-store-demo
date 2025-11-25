@@ -67,7 +67,7 @@ const STORE_COMPANY_NAME = process.env.COMPANY_NAME || 'Santa';
 
 test.skip(STORE_ADMIN_URL === 'http://', 'STORE_ADMIN_URL is not set');
 await page.goto(STORE_ADMIN_URL);
-await expect(page).toHaveTitle(new RegExp(`${STORE_COMPANY_NAME} Pet Store Admin Portal`));
+await expect(page).toHaveTitle(new RegExp(`${STORE_COMPANY_NAME} Pet Store Elf operations center `));
 ```
 
 ### After (New Pattern)

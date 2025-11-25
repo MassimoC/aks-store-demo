@@ -4,7 +4,7 @@
       <router-link to="/">
         <img src="/contoso-pet-store-logo.png" alt="Santa Store Logo" />
       </router-link>
-      Admin Portal
+      Elf operations center 
     </div>
     <ul class="nav-links" :class="{ 'nav-links--open': isNavOpen }">
       <li><router-link to="/orders" @click="closeNav">Orders</router-link></li>

@@ -134,7 +134,7 @@ test.describe('store-admin comprehensive tests', () => {
     }
   });
 
-  test('displays proper branding throughout admin portal', async ({ page }) => {
+  test('displays proper branding throughout Elf operations center ', async ({ page }) => {
     await page.goto(testConfig.storeAdminUrl);
 
     // Verify main page title

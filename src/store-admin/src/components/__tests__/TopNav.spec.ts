@@ -8,7 +8,7 @@ describe('TopNav', () => {
     const wrapper = mount(TopNav)
     expect(wrapper.find('nav').exists()).toBe(true)
     expect(wrapper.find('.logo').exists()).toBe(true)
-    expect(wrapper.find('.logo').text()).toContain('Admin Portal')
+    expect(wrapper.find('.logo').text()).toContain('Elf operations center ')
   })
 
   it('contains navigation links', () => {
