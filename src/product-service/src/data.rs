@@ -42,7 +42,7 @@ pub fn fetch_products(_settings: &Settings) -> Vec<Product> {
             id: 6,
             name: "Seafarer's Tug Rope".to_string(),
             price: 14.99,
-            description: "Tug-of-war meets nautical adventure with the Seafarer's Tug Rope. Made from marine-grade rope, it is perfect for interactive play and promoting dental health in dogs.".to_string(),
+            description: "Tug-of-war meets nautical adventure with the Seafarer's Tug Rope. Made from marine-grade rope, it's perfect for interactive play and promoting dental health in dogs.".to_string(),
             image: "/tug.jpg".to_string()
         },
         Product {
