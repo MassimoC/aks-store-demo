@@ -5,9 +5,9 @@ pub fn fetch_products(_settings: &Settings) -> Vec<Product> {
     vec![
         Product {
             id: 1,
-            name: "Contoso Catnip's Friend".to_string(),
+            name: "Santa Catnip's Friend".to_string(),
             price: 9.99,
-            description: "Watch your feline friend embark on a fishing adventure with Contoso Catnip's Friend toy. Packed with irresistible catnip and dangling fish lure.".to_string(),
+            description: "Watch your feline friend embark on a fishing adventure with Santa Catnip's Friend toy. Packed with irresistible catnip and dangling fish lure.".to_string(),
             image: "/catnip.jpg".to_string()
         },
         Product {
@@ -61,9 +61,9 @@ pub fn fetch_products(_settings: &Settings) -> Vec<Product> {
         },
         Product {
             id: 9,
-            name: "Contoso Claw's Crabby Cat Toy".to_string(),
+            name: "Santa Claw's Crabby Cat Toy".to_string(),
             price: 3.99,
-            description: "Watch your cat go crazy for Contoso Claw's Crabby Cat Toy. This crinkly and catnip-filled toy will awaken their hunting instincts and provide endless entertainment.".to_string(),
+            description: "Watch your cat go crazy for Santa Claw's Crabby Cat Toy. This crinkly and catnip-filled toy will awaken their hunting instincts and provide endless entertainment.".to_string(),
             image: "/crabby.jpg".to_string()
         },
         Product {
@@ -72,6 +72,13 @@ pub fn fetch_products(_settings: &Settings) -> Vec<Product> {
             price: 5.99,
             description: "Ensure your furry friend stays safe during water adventures with the Ahoy Doggy Life Jacket. Designed for dogs, this flotation device offers buoyancy and visibility in style.".to_string(),
             image: "/lifejacket.jpg".to_string()
+        },
+        Product {
+            id: 11,
+            name: "CloudBrew Plush Mascot".to_string(),
+            price: 11.99,
+            description: "Meet the CloudBrew Plush Mascot, the cutest companion for cloud enthusiasts, techies, and conference lovers alike! This limited-edition plush toy features a soft sky-blue body, fluffy cloud-foam top, and a friendly embroidered smile that instantly brightens any workspace.".to_string(),
+            image: "/cloudbrew.jpg".to_string()
         }
     ]
 }

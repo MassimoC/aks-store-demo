@@ -18,7 +18,7 @@ const testConfig = {
   storeFrontUrl: env.SERVICE_STORE_FRONT_ENDPOINT_URL || 'http://',
   
   // Company branding
-  companyName: env.COMPANY_NAME || 'Contoso',
+  companyName: env.COMPANY_NAME || 'Santa',
   
   // Helper methods for common checks
   isStoreAdminConfigured() {
@@ -31,11 +31,11 @@ const testConfig = {
   
   // Helper methods for common title expectations
   getExpectedAdminTitle() {
-    return new RegExp(`${this.companyName} Pet Store Admin Portal`);
+    return new RegExp(`${this.companyName} Store - elf operations center`);
   },
   
   getExpectedStoreFrontTitle() {
-    return new RegExp(`${this.companyName} Pet Store`);
+    return new RegExp(`${this.companyName} Store`);
   }
 };
 

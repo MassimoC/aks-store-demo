@@ -179,7 +179,7 @@ The tests support dynamic configuration through environment variables:
 - **`SERVICE_STORE_ADMIN_ENDPOINT_URL`**: Store admin application URL
 
 ### Optional Variables
-- **`COMPANY_NAME`**: Company name for branding tests (default: "Contoso")
+- **`COMPANY_NAME`**: Company name for branding tests (default: "Santa")
 
 ### Example Configuration
 ```bash
@@ -251,7 +251,7 @@ All tests support configurable company names for brand-agnostic testing:
 ```typescript
 // Centralized through test-config.js
 const testConfig = require('../test-config');
-console.log(testConfig.companyName); // From COMPANY_NAME env var or 'Contoso'
+console.log(testConfig.companyName); // From COMPANY_NAME env var or 'Santa'
 ```
 
 ### ✅ **Automatic Environment Detection**

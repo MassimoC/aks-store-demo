@@ -21,7 +21,7 @@ const testConfig = {
   storeFrontUrl: string,     // SERVICE_STORE_FRONT_ENDPOINT_URL or 'http://'
   
   // Company branding
-  companyName: string,       // COMPANY_NAME or 'Contoso'
+  companyName: string,       // COMPANY_NAME or 'Santa'
   
   // Helper methods
   isStoreAdminConfigured(): boolean,
@@ -63,7 +63,7 @@ test.skip(!testConfig.isStoreAdminConfigured(), 'Store admin URL not set');
 ### Before (Old Pattern)
 ```typescript
 const STORE_ADMIN_URL = process.env.SERVICE_STORE_ADMIN_ENDPOINT_URL || 'http://';
-const STORE_COMPANY_NAME = process.env.COMPANY_NAME || 'Contoso';
+const STORE_COMPANY_NAME = process.env.COMPANY_NAME || 'Santa';
 
 test.skip(STORE_ADMIN_URL === 'http://', 'STORE_ADMIN_URL is not set');
 await page.goto(STORE_ADMIN_URL);

@@ -2,7 +2,7 @@
   <nav>
     <div class="logo">
       <router-link to="/">
-        <img src="/contoso-pet-store-logo.png" alt="Contoso Pet Store Logo" />
+        <img src="/contoso-pet-store-logo.png" alt="Santa Store Logo" />
       </router-link>
     </div>
     <button class="hamburger" @click="toggleNav">
