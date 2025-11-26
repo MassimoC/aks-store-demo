@@ -1,26 +1,33 @@
 :root {
-  --primary-color: #2a2a2a;
+  --primary-color: #1a472a; /* Christmas green */
   --secondary-color: #ffffff;
-  --accent-color: #007bff;
-  --accent-color-dark: #0062cc; /* Pre-calculated darker version */
-  --background-color: #f8f9fa;
+  --accent-color: #c41e3a; /* Christmas red */
+  --accent-color-dark: #a01830; /* Darker Christmas red */
+  --background-color: #fdf6e3; /* Warm cream background */
   --card-background: #ffffff;
   --text-color: #2c3e50;
   --border-radius: 8px;
   --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --button-color: #005f8b;
-  --button-hover-color: #004a6e;
+  --button-color: #c41e3a; /* Christmas red for buttons */
+  --button-hover-color: #a01830;
+  --gold-accent: #d4af37; /* Gold accent */
 }
 
 body {
   font-family: 'Inter', 'Avenir', Helvetica, Arial, sans-serif;
   background-color: var(--background-color);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(196, 30, 58, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(26, 71, 42, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.02) 0%, transparent 30%);
   color: var(--text-color);
   margin: 0;
   padding: 120px 0 0 0; /* Add top padding to push content down */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  min-height: 100vh;
+  position: relative;
 }
 
 .container {
@@ -70,10 +77,11 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #333;
+  background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
   color: #fff;
   padding: 1rem;
   margin: 0;
+  border-top: 3px solid var(--gold-accent);
 }
 
 /* Product Display */
@@ -94,18 +102,20 @@ footer {
   padding: 15px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin: 1rem;
   padding: 1rem;
-  border: 1px solid #ccc;
+  border: 2px solid transparent;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(26, 71, 42, 0.15);
+  border-color: var(--gold-accent);
 }
 
 .product-card img {
