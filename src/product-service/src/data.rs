@@ -79,6 +79,27 @@ pub fn fetch_products(_settings: &Settings) -> Vec<Product> {
             price: 11.99,
             description: "Meet the CloudBrew Plush Mascot, the cutest companion for cloud enthusiasts, techies, and conference lovers alike! This limited-edition plush toy features a soft sky-blue body, fluffy cloud-foam top, and a friendly embroidered smile that instantly brightens any workspace.".to_string(),
             image: "/cloudbrew.jpg".to_string()
+        },
+        Product {
+            id: 12,
+            name: "Azura the Cloud Elephant".to_string(),
+            price: 11.99,
+            description: "This squishy blue elephant may look soft as a cloud, but she’s secretly on a mission: protect your sofa from unauthorized chewing attempts. Built with “infinite scaling” squeaks and “geo-redundant fluff,” Azura is ready for dogs and cats who take uptime very seriously. Perfect for snuggles, zoomies, and debugging bad moods.".to_string(),
+            image: "/elephant.jpg".to_string()
+        },
+        Product {
+            id: 13,
+            name: "HotRod Racer".to_string(),
+            price: 11.99,
+            description: "This plush brings horsepower to nap time. Super soft exterior, high-octane fluff interior, and a squeaker that sounds like a tiny engine revving. Ideal for pets who like to zoom first and cuddle later.".to_string(),
+            image: "/hotrod.jpg".to_string()
+        },
+        Product {
+            id: 14,
+            name: "Blockchain dilemma pillow".to_string(),
+            price: 5.72,
+            description: "Built for dogs who can’t sleep because they’re still deciding whether to put their bones on-chain. Fluffy, comfy, and ideal for long nights of overthinking complex paw-to-paw ledgers.".to_string(),
+            image: "/pillow.jpg".to_string()
         }
     ]
 }
