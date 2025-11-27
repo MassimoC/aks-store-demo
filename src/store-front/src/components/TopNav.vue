@@ -2,7 +2,10 @@
   <nav>
     <div class="logo">
       <router-link to="/">
-        <img src="/contoso-pet-store-logo.png" alt="Santa Store Logo" />
+        <div class="logo-container">
+          <img src="/santa-store-logo.png" alt="Santa Pet Store Logo" />
+          <div class="santa-hat"></div>
+        </div>
       </router-link>
     </div>
     <button class="hamburger" @click="toggleNav">
@@ -40,7 +43,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #8B0000;
   color: #fff;
   padding-top: 0.5rem;
   padding-left: 1rem;
@@ -52,9 +55,48 @@ nav {
   right: 0;
 }
 
+.logo-container {
+  position: relative;
+  display: inline-block;
+}
+
 nav img {
   width: 100px;
   height: auto;
+}
+
+.santa-hat {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 25px solid #c41e3a;
+}
+
+.santa-hat::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: -25px;
+  width: 50px;
+  height: 8px;
+  background: white;
+  border-radius: 4px;
+}
+
+.santa-hat::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -5px;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
 }
 
 .nav-links {
@@ -110,7 +152,7 @@ nav img {
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #333;
+    background-color: #8B0000;
     padding: 1rem;
   }
 
