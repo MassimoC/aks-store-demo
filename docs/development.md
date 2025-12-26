@@ -511,10 +511,10 @@ Update documentation when:
 
 - **Issues**: [GitHub Issues](https://github.com/Azure-Samples/aks-store-demo/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/Azure-Samples/aks-store-demo/discussions)
-- **Documentation**: [Project Documentation](index.md)
+- **Documentation**: [Project Documentation](index.html)
 
 ## Next Steps
 
-- [Understand the architecture](architecture.md)
-- [Deploy the application](deployment.md)
-- [Explore service details](services.md)
+- [Understand the architecture](architecture.html)
+- [Deploy the application](deployment.html)
+- [Explore service details](services.html)

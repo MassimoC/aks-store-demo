@@ -518,6 +518,6 @@ When deployed with observability tools:
 
 ## Next Steps
 
-- [Deploy the application](deployment.md)
-- [Set up development environment](development.md)
-- [Learn about architecture](architecture.md)
+- [Deploy the application](deployment.html)
+- [Set up development environment](development.html)
+- [Learn about architecture](architecture.html)

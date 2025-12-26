@@ -21,11 +21,11 @@ This application is inspired by the [Red Dog](https://github.com/Azure/reddog-co
 
 ## Quick Links
 
-- [Architecture](architecture.md) - Understand the application architecture
-- [Deployment Guide](deployment.md) - Deploy to AKS, local Docker, or Azure with azd
-- [Development Guide](development.md) - Set up your local development environment
-- [Services Documentation](services.md) - Details about each microservice
-- [Troubleshooting](troubleshooting.md) - Common issues and solutions
+- [Architecture](architecture.html) - Understand the application architecture
+- [Deployment Guide](deployment.html) - Deploy to AKS, local Docker, or Azure with azd
+- [Development Guide](development.html) - Set up your local development environment
+- [Services Documentation](services.html) - Details about each microservice
+- [Troubleshooting](troubleshooting.html) - Common issues and solutions
 
 ## Key Features
 
@@ -75,7 +75,7 @@ The fastest way to get started is to:
    azd up
    ```
 
-For detailed instructions, see the [Deployment Guide](deployment.md).
+For detailed instructions, see the [Deployment Guide](deployment.html).
 
 ## Architecture Diagram
 
