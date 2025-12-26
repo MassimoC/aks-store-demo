@@ -176,7 +176,7 @@ After you provide the information, `azd up` registers providers/features and ins
 This will take a few minutes to complete.
 
 > [!NOTE]
-> Infra defaults to [Terraform](../infra/terraform). To use [Bicep](../infra/bicep) instead, open `azure.yaml` and change:
+> Infra defaults to [Terraform](https://github.com/MassimoC/aks-store-demo/tree/main/infra/terraform). To use [Bicep](https://github.com/MassimoC/aks-store-demo/tree/main/infra/bicep) instead, open `azure.yaml` and change:
 >
 > - `infra.provider: bicep`
 > - `infra.path: infra/bicep`

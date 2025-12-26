@@ -79,7 +79,7 @@ For detailed instructions, see the [Deployment Guide](deployment.md).
 
 ## Architecture Diagram
 
-![Application Architecture](../assets/demo-arch-with-openai.png)
+![Application Architecture]({{ site.baseurl }}/assets/demo-arch-with-openai.png)
 
 ## Learn More
 
@@ -89,8 +89,8 @@ For detailed instructions, see the [Deployment Guide](deployment.md).
 
 ## Contributing
 
-This project welcomes contributions and suggestions. See [CONTRIBUTING.md](../CONTRIBUTING.md) for details.
+This project welcomes contributions and suggestions. See [CONTRIBUTING.md](https://github.com/MassimoC/aks-store-demo/blob/main/CONTRIBUTING.md) for details.
 
 ## License
 
-This project is licensed under the MIT License - see [LICENSE.md](../LICENSE.md) for details.
+This project is licensed under the MIT License - see [LICENSE.md](https://github.com/MassimoC/aks-store-demo/blob/main/LICENSE.md) for details.

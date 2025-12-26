@@ -12,7 +12,7 @@ This page provides detailed information about the AKS Store Demo architecture, i
 
 The AKS Store Demo follows a microservices architecture pattern with event-driven communication between services.
 
-![Architecture Diagram](../assets/demo-arch-with-openai.png)
+![Architecture Diagram]({{ site.baseurl }}/assets/demo-arch-with-openai.png)
 
 ## Services Overview
 
