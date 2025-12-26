@@ -1,5 +1,5 @@
 theme: just-the-docs
-title: AKS Store Demo
+title: Santa App
 description: Documentation for the AKS Store Demo - a sample microservices application for Azure Kubernetes Service
 url: https://massimoc.github.io
 baseurl: /aks-store-demo
