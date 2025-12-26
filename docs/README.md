@@ -1,4 +1,4 @@
-# AKS Store Demo Documentation
+# Santa App Documentation
 
 This directory contains the documentation for the AKS Store Demo application, published as GitHub Pages.
 
