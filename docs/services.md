@@ -87,7 +87,7 @@ Response:
 ### Source Code
 Located in `src/order-service/`
 
-For more details, see [Order Service README](https://github.com/MassimoC/aks-store-demo/blob/main/src/order-service/README.html)
+For more details, see [Order Service README](https://github.com/MassimoC/aks-store-demo/blob/main/src/order-service/README.md)
 
 ---
 
@@ -162,7 +162,7 @@ Response includes AI-generated description and optional image URL.
 ### Source Code
 Located in `src/product-service/`
 
-For more details, see [Product Service README](https://github.com/MassimoC/aks-store-demo/blob/main/src/product-service/README.html)
+For more details, see [Product Service README](https://github.com/MassimoC/aks-store-demo/blob/main/src/product-service/README.md)
 
 ---
 
@@ -210,7 +210,7 @@ PORT=3001                                # HTTP port for health checks
 ### Source Code
 Located in `src/makeline-service/`
 
-For more details, see [Makeline Service README](https://github.com/MassimoC/aks-store-demo/blob/main/src/makeline-service/README.html)
+For more details, see [Makeline Service README](https://github.com/MassimoC/aks-store-demo/blob/main/src/makeline-service/README.md)
 
 ---
 
@@ -290,7 +290,7 @@ Response:
 ### Source Code
 Located in `src/ai-service/`
 
-For more details, see [AI Service README](https://github.com/MassimoC/aks-store-demo/blob/main/src/ai-service/README.html)
+For more details, see [AI Service README](https://github.com/MassimoC/aks-store-demo/blob/main/src/ai-service/README.md)
 
 ---
 

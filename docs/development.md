@@ -503,9 +503,9 @@ Update documentation when:
 
 ## Resources
 
-- [Contributing Guide](https://github.com/MassimoC/aks-store-demo/blob/main/CONTRIBUTING.html)
-- [Code of Conduct](https://github.com/MassimoC/aks-store-demo/blob/main/.github/CODE_OF_CONDUCT.html)
-- [Security Policy](https://github.com/MassimoC/aks-store-demo/blob/main/SECURITY.html)
+- [Contributing Guide](https://github.com/MassimoC/aks-store-demo/blob/main/CONTRIBUTING.md)
+- [Code of Conduct](https://github.com/MassimoC/aks-store-demo/blob/main/.github/CODE_OF_CONDUCT.md)
+- [Security Policy](https://github.com/MassimoC/aks-store-demo/blob/main/SECURITY.md)
 
 ## Getting Help
 

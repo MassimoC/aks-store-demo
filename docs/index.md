@@ -89,8 +89,8 @@ For detailed instructions, see the [Deployment Guide](deployment.html).
 
 ## Contributing
 
-This project welcomes contributions and suggestions. See [CONTRIBUTING.md](https://github.com/MassimoC/aks-store-demo/blob/main/CONTRIBUTING.html) for details.
+This project welcomes contributions and suggestions. See [CONTRIBUTING.md](https://github.com/MassimoC/aks-store-demo/blob/main/CONTRIBUTING.md) for details.
 
 ## License
 
-This project is licensed under the MIT License - see [LICENSE.md](https://github.com/MassimoC/aks-store-demo/blob/main/LICENSE.html) for details.
+This project is licensed under the MIT License - see [LICENSE.md](https://github.com/MassimoC/aks-store-demo/blob/main/LICENSE.md) for details.
