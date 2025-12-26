@@ -5,7 +5,8 @@ _site/
 
 # Ruby
 .bundle/
-vendor/
+vendor/bundle/
+vendor/cache/
 Gemfile.lock
 
 # IDE
