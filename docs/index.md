@@ -4,7 +4,7 @@ title: Home
 nav_order: 1
 ---
 
-# AKS Store Demo Documentation
+# Santa App Documentation
 
 Welcome to the AKS Store Demo documentation! This sample demo app consists of a group of containerized microservices that can be easily deployed into an Azure Kubernetes Service (AKS) cluster.
 
