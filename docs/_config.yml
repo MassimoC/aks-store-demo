@@ -1,0 +1,69 @@
+theme: just-the-docs
+title: AKS Store Demo
+description: Documentation for the AKS Store Demo - a sample microservices application for Azure Kubernetes Service
+url: https://massimoc.github.io
+baseurl: /aks-store-demo
+
+# GitHub Pages settings
+repository: MassimoC/aks-store-demo
+
+# Enable search
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# Navigation
+nav_sort: order
+nav_enabled: true
+
+# Footer content
+footer_content: 'Copyright &copy; Microsoft Corporation. This project is licensed under the MIT License.'
+
+# Color scheme
+color_scheme: light
+
+# Enable code copy button
+enable_copy_code_button: true
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Heading anchors
+heading_anchors: true
+
+# Aux links for the upper right navigation
+aux_links:
+  "AKS Store Demo on GitHub":
+    - "https://github.com/MassimoC/aks-store-demo"
+  "Azure Kubernetes Service":
+    - "https://learn.microsoft.com/azure/aks"
+
+# Makes aux links open in new tab
+aux_links_new_tab: true
+
+# Favicon
+favicon_ico: "/assets/images/favicon.ico"
+
+# GA Tracking (optional - remove if not needed)
+# ga_tracking: UA-XXXXXXXX-X
+# ga_tracking_anonymize_ip: true
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE.md

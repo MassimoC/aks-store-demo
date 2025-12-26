@@ -1,6 +1,14 @@
+---
+layout: default
+title: Azure Developer CLI Guide
+nav_order: 7
+---
+
 # Deploying the AKS Store Demo app to Azure using Azure Developer CLI
 
 Using the [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview), you can deploy this solution to Azure in minutes. By default it ships prebuilt container images and RabbitMQ/MongoDB; you can also opt into Azure Service Bus and Azure Cosmos DB, and even build app images from source.
+
+> For a high-level deployment overview, see the [Deployment Guide](deployment.md).
 
 ## Prerequisites
 
