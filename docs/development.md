@@ -503,18 +503,18 @@ Update documentation when:
 
 ## Resources
 
-- [Contributing Guide](https://github.com/MassimoC/aks-store-demo/blob/main/CONTRIBUTING.md)
-- [Code of Conduct](https://github.com/MassimoC/aks-store-demo/blob/main/.github/CODE_OF_CONDUCT.md)
-- [Security Policy](https://github.com/MassimoC/aks-store-demo/blob/main/SECURITY.md)
+- [Contributing Guide](https://github.com/MassimoC/aks-store-demo/blob/main/CONTRIBUTING.html)
+- [Code of Conduct](https://github.com/MassimoC/aks-store-demo/blob/main/.github/CODE_OF_CONDUCT.html)
+- [Security Policy](https://github.com/MassimoC/aks-store-demo/blob/main/SECURITY.html)
 
 ## Getting Help
 
 - **Issues**: [GitHub Issues](https://github.com/Azure-Samples/aks-store-demo/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/Azure-Samples/aks-store-demo/discussions)
-- **Documentation**: [Project Documentation](index.md)
+- **Documentation**: [Project Documentation](index.html)
 
 ## Next Steps
 
-- [Understand the architecture](architecture.md)
-- [Deploy the application](deployment.md)
-- [Explore service details](services.md)
+- [Understand the architecture](architecture.html)
+- [Deploy the application](deployment.html)
+- [Explore service details](services.html)

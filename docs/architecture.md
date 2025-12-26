@@ -255,6 +255,6 @@ The application consists of the following services:
 
 ## Next Steps
 
-- [Deploy the application](deployment.md)
-- [Set up development environment](development.md)
-- [Learn about individual services](services.md)
+- [Deploy the application](deployment.html)
+- [Set up development environment](development.html)
+- [Learn about individual services](services.html)

@@ -565,6 +565,6 @@ If you're still experiencing issues:
 
 ## Next Steps
 
-- [Return to main documentation](index.md)
-- [Review architecture](architecture.md)
-- [Check deployment guide](deployment.md)
+- [Return to main documentation](index.html)
+- [Review architecture](architecture.html)
+- [Check deployment guide](deployment.html)

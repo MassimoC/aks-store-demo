@@ -268,7 +268,7 @@ Remove all Azure resources:
 azd down --force --purge
 ```
 
-For more details, see [Azure Developer CLI documentation](azd.md).
+For more details, see [Azure Developer CLI documentation](azd.html).
 
 ## GitHub Codespaces
 
@@ -412,10 +412,10 @@ kubectl logs [POD_NAME] -n pets
 - Review activity log
 - Ensure all required providers are registered
 
-For more troubleshooting tips, see [Troubleshooting Guide](troubleshooting.md).
+For more troubleshooting tips, see [Troubleshooting Guide](troubleshooting.html).
 
 ## Next Steps
 
-- [Learn about the architecture](architecture.md)
-- [Set up development environment](development.md)
-- [Explore individual services](services.md)
+- [Learn about the architecture](architecture.html)
+- [Set up development environment](development.html)
+- [Explore individual services](services.html)
