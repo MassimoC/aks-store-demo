@@ -8,7 +8,12 @@ const mountNav = () =>
   mount(TopNav, {
     global: {
       plugins: [createPinia()],
-      stubs: ['router-link'],
+      stubs: {
+        RouterLink: {
+          props: ['to'],
+          template: '<a :data-to="to"><slot /></a>',
+        },
+      },
     },
   })
 
@@ -17,15 +22,15 @@ describe('TopNav', () => {
     const wrapper = mountNav()
     expect(wrapper.find('nav').exists()).toBe(true)
     expect(wrapper.find('.logo').exists()).toBe(true)
-    expect(wrapper.find('.logo').text()).toContain('Elf operations center ')
+    expect(wrapper.find('.logo').text()).toContain("Santa's Capybara Atelier")
   })
 
   it('contains navigation links', () => {
     const wrapper = mountNav()
     expect(wrapper.find('.nav-links').exists()).toBe(true)
     expect(wrapper.findAll('.nav-links li').length).toBe(2)
-    expect(wrapper.findAll('router-link-stub').at(0)?.attributes('to')).toBe('/orders')
-    expect(wrapper.findAll('router-link-stub').at(1)?.attributes('to')).toBe('/products')
+    expect(wrapper.findAll('.nav-links a').at(0)?.attributes('data-to')).toBe('/')
+    expect(wrapper.findAll('.nav-links a').at(1)?.attributes('data-to')).toBe('/cart')
   })
 
   it('toggles mobile menu when hamburger is clicked', async () => {

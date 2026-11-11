@@ -9,6 +9,7 @@
     <!-- Column headers -->
     <div class="table-header">
       <div class="column-id">Product ID</div>
+      <div class="column-image">Preview</div>
       <div class="column-name">Product Name</div>
       <div class="column-description">Description</div>
       <div class="column-price">Price</div>
@@ -22,6 +23,7 @@
       @click="navigateToProduct(product.id)"
     >
       <div class="column-id">{{ product.id }}</div>
+      <div class="column-image"><img :src="product.image" :alt="product.name" /></div>
       <div class="column-name">{{ product.name }}</div>
       <div class="column-description">{{ product.description }}</div>
       <div class="column-price">{{ product.price }}</div>
@@ -67,7 +69,7 @@ const navigateToProduct = (productId: string | number) => {
 .table-header,
 .table-row {
   display: grid;
-  grid-template-columns: 0.5fr 1fr 2.5fr 0.5fr;
+  grid-template-columns: 0.45fr 0.55fr 1fr 2.5fr 0.6fr;
   align-items: center;
   padding: 0.5rem 1rem;
 }
@@ -116,6 +118,8 @@ const navigateToProduct = (productId: string | number) => {
 .column-price {
   text-align: right;
 }
+
+.column-image img { width: 42px; height: 42px; object-fit: cover; border-radius: 8px; display: block; }
 
 .empty-list {
   text-align: center;

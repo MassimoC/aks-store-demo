@@ -47,8 +47,8 @@
           <span>{{ calculateSubtotal().toFixed(2) }}</span>
         </div>
         <div class="summary-row">
-          <span>Shipping:</span>
-          <span>Free</span>
+          <span>Demo order:</span>
+          <span>Illustrative</span>
         </div>
         <div class="summary-row total">
           <span>Total:</span>
@@ -58,17 +58,18 @@
     </div>
     <div class="cart-actions">
       <button class="continue-button" @click="continueShopping">
-        Continue Shopping
+        Back to collection
       </button>
       <button class="checkout-button" @click="submitOrder">
-        Proceed to Checkout
+        Send demo order
       </button>
     </div>
   </div>
   <div class="shopping-cart empty-cart" v-else>
-    <h3>Your shopping cart is empty</h3>
+    <p class="eyebrow">Santa's Capybara Atelier</p>
+    <h3>Your demo cart is waiting for a keepsake.</h3>
     <button class="continue-button" @click="continueShopping">
-      Continue Shopping
+      Browse the collection
     </button>
   </div>
 </template>
@@ -134,14 +135,14 @@ const submitOrder = () => {
     .then((response) => {
       if (response.ok) {
         cartStore.clear();
-        alert("Order submitted successfully");
+        alert("Demo order sent successfully");
       } else {
-        alert("Error occurred while submitting order");
+        alert("The demo order could not be sent. Please try again.");
       }
     })
     .catch((error) => {
       console.error("Error submitting order:", error);
-      alert("Error occurred while submitting order");
+      alert("The demo order could not be sent. Please try again.");
     });
 };
 </script>

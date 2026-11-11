@@ -2,28 +2,18 @@
   <nav>
     <div class="logo">
       <router-link to="/">
-        <span class="elf-logo">🧝‍♂️🎄🧝‍♀️</span>
+        <span class="atelier-mark" aria-hidden="true">◒</span>
       </router-link>
-      <span class="logo-text">🎄 Elf Workshop 🎅</span>
+      <span class="logo-text">Atelier Console</span>
     </div>
     <ul class="nav-links" :class="{ 'nav-links--open': isNavOpen }">
-      <li><router-link to="/orders" @click="closeNav">📦 Orders</router-link></li>
-      <li><router-link to="/products" @click="closeNav">🎁 Products</router-link></li>
+      <li><router-link to="/orders" @click="closeNav">Orders</router-link></li>
+      <li><router-link to="/products" @click="closeNav">Collection</router-link></li>
     </ul>
     <button class="hamburger" @click="toggleNav">
       <span class="hamburger-icon"></span>
     </button>
   </nav>
-  <div class="snowflakes" aria-hidden="true">
-    <div class="snowflake">❄</div>
-    <div class="snowflake">❅</div>
-    <div class="snowflake">❆</div>
-    <div class="snowflake">❄</div>
-    <div class="snowflake">❅</div>
-    <div class="snowflake">❆</div>
-    <div class="snowflake">❄</div>
-    <div class="snowflake">❅</div>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -68,18 +58,19 @@ nav img {
   align-self: center;
 }
 
-.elf-logo {
-  font-size: 2.5rem;
-  padding-right: 15px;
-  display: inline-block;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+.atelier-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--gold-accent);
+  border-radius: 50%;
+  color: var(--gold-accent);
 }
 
 .logo-text {
-  background: linear-gradient(90deg, #ffffff 0%, var(--gold-accent) 50%, #ffffff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fdf6e3;
+  font-family: Georgia, serif;
   font-weight: bold;
 }
 

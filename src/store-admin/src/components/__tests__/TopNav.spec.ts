@@ -8,13 +8,12 @@ describe('TopNav', () => {
     const wrapper = mount(TopNav)
     expect(wrapper.find('nav').exists()).toBe(true)
     expect(wrapper.find('.logo').exists()).toBe(true)
-    expect(wrapper.find('.logo-text').text()).toContain('Elf Workshop')
+    expect(wrapper.find('.logo-text').text()).toContain('Atelier Console')
   })
 
-  it('displays elf logo', () => {
+  it('displays the Atelier mark', () => {
     const wrapper = mount(TopNav)
-    expect(wrapper.find('.elf-logo').exists()).toBe(true)
-    expect(wrapper.find('.elf-logo').text()).toContain('🧝')
+    expect(wrapper.find('.atelier-mark').exists()).toBe(true)
   })
 
   it('contains navigation links', () => {
@@ -34,9 +33,4 @@ describe('TopNav', () => {
     expect(wrapper.find('.nav-links').classes()).not.toContain('nav-links--open')
   })
 
-  it('displays snowflakes for Christmas theme', () => {
-    const wrapper = mount(TopNav)
-    expect(wrapper.find('.snowflakes').exists()).toBe(true)
-    expect(wrapper.findAll('.snowflake').length).toBe(8)
-  })
 })
