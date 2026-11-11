@@ -2,16 +2,17 @@
   <nav>
     <div class="logo">
       <router-link to="/">
-        <img src="/contoso-pet-store-logo.png" alt="Santa Store Logo" />
+        <span class="brand-mark" aria-hidden="true">◒</span>
+        <span class="brand-name">Santa's Capybara Atelier</span>
       </router-link>
     </div>
     <button class="hamburger" @click="toggleNav">
       <span class="hamburger-icon"></span>
     </button>
     <ul class="nav-links" :class="{ 'nav-links--open': isNavOpen }">
-      <li><router-link to="/" @click="closeNav">Products</router-link></li>
+      <li><router-link to="/" @click="closeNav">Collection</router-link></li>
       <li>
-        <router-link to="/cart" @click="closeNav">Cart ({{ cartItemCount }})</router-link>
+        <router-link to="/cart" @click="closeNav">Demo cart ({{ cartItemCount }})</router-link>
       </li>
     </ul>
   </nav>
@@ -40,29 +41,47 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: #fff;
-  padding-top: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 0.25rem;
+  background: #132718;
+  color: #f7ead2;
+  padding: 0.8rem 1.25rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
 }
 
-nav img {
-  width: 100px;
-  height: auto;
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #f7ead2;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid #c9a764;
+  border-radius: 50%;
+  color: #c9a764;
+}
+
+.brand-name {
+  font-family: Georgia, serif;
+  font-size: clamp(1rem, 2vw, 1.45rem);
+  font-weight: 700;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 0.95rem;
+  font-weight: 700;
+  gap: 1rem;
 }
+
+.nav-links a { color: #f7ead2; }
 
 .hamburger {
   display: none;

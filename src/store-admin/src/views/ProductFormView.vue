@@ -1,7 +1,13 @@
 <template>
-  <div class="action-button">
-    <button @click="saveProduct" class="button">Save Product</button>
-  </div>
+  <main class="page-shell">
+    <header class="form-heading">
+      <div>
+        <p class="eyebrow">Catalog management</p>
+        <h1>{{ route.params.id ? 'Edit atelier product' : 'Add atelier product' }}</h1>
+        <p>Update the conference-demo catalog without changing the product service contract.</p>
+      </div>
+      <button @click="saveProduct" class="button">Save product</button>
+    </header>
 
   <div v-if="showValidationErrors && validationErrors.length > 0" class="validation-errors">
     <ul>
@@ -101,6 +107,7 @@
       </div>
     </div>
   </div>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -313,6 +320,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.page-shell { width: min(1020px, calc(100% - 32px)); margin: 0 auto; padding: 40px 0 72px; }
+.form-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }.eyebrow { margin: 0 0 7px; color: var(--berry); font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }.form-heading h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; }.form-heading p:not(.eyebrow) { max-width: 620px; margin: 9px 0 0; color: var(--muted); line-height: 1.55; }
 .action-button {
   text-align: right;
   margin: 1.5rem;
@@ -427,7 +436,7 @@ onMounted(() => {
 
 .validation-errors {
   background-color: #ffdddd;
-  border-left: 5px solid #f44336;
+  border-left: 1px solid #f44336;
   padding: 0.5rem 1rem;
   margin: 1rem 0;
   border-radius: var(--border-radius);
@@ -499,4 +508,7 @@ onMounted(() => {
 .ai-icon {
   font-size: 1.1em;
 }
+
+.action-button { display: none; }.product-form-container { width: 100%; max-width: none; margin: 0; padding: 28px; border: 1px solid var(--line); border-radius: var(--border-radius); background: var(--paper); box-shadow: var(--shadow); gap: 28px; }.form-group { margin-bottom: 22px; }.form-group label { color: var(--ink); font-size: .88rem; }.form-input, .form-textarea { border-color: #cbc4b4; border-radius: 7px; background: #fffefa; color: var(--ink); }.form-input:focus, .form-textarea:focus { border-color: var(--brass); outline: 3px solid rgba(216,181,106,.35); }.label-with-actions { justify-content: space-between; gap: 12px; }.ai-button { border-radius: 7px; background: #e8dfca; color: var(--pine); font-size: .84rem; }.ai-button:hover { background: #dcd0b3; }.image-container { max-width: 100%; border: 1px solid var(--line); box-shadow: none; }.validation-errors { width: 100%; margin: 0 0 20px; border: 1px solid #d79a92; border-left-width: 1px; border-radius: 8px; background: #fff0ed; }.validation-errors ul { color: #812c2a; }.validation-errors li::before { color: #812c2a; }
+@media (max-width: 680px) { .page-shell { padding-top: 28px; }.form-heading { align-items: start; flex-direction: column; }.product-form-container { padding: 18px; }.label-with-actions { align-items: start; flex-direction: column; } }
 </style>

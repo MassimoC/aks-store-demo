@@ -1,15 +1,15 @@
 <template>
   <div class="product-card">
-    <img :src="product.image" alt="Product Image" @click="routeToProduct" />
+    <img :src="product.image" :alt="product.name" @click="routeToProduct" />
     <h2 @click="routeToProduct">{{ product.name }}</h2>
     <p @click="routeToProduct">{{ product.description }}</p>
     <div class="product-details">
       <div class="product-price">
-        <p class="price">{{ product.price }}</p>
+        <p class="price">${{ product.price.toFixed(2) }}</p>
       </div>
       <div class="product-controls">
         <input type="number" v-model="quantity" min="1" class="quantity-input" />
-        <button @click="addToCart">Add to Cart</button>
+        <button @click="addToCart">Add to cart</button>
       </div>
     </div>
   </div>

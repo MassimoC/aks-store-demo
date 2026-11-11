@@ -8,6 +8,7 @@ import { onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 import { useProductStore } from '@/stores'
 import type { Product } from '@/types'
+import { presentProduct } from '@/catalog'
 import TopNav from './components/TopNav.vue'
 
 const productStore = useProductStore()
@@ -18,7 +19,7 @@ onMounted(() => {
     fetch('/api/products')
       .then((response) => response.json())
       .then((data: Product[]) => {
-        productStore.addProducts(data)
+        productStore.addProducts(data.map(presentProduct))
         console.log(`Fetched ${data.length} products`)
       })
       .catch((error) => {

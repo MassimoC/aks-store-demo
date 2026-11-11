@@ -5,16 +5,16 @@
     </div>
     <div class="product-info">
       <h2>{{ product.name }}</h2>
-      <small>Product ID: {{ product.id }}</small>
+      <p class="eyebrow">Atelier collectible · no. {{ product.id }}</p>
       <p>{{ product.description }}</p>
       <div class="product-controls">
         <p>
           <b
-            >Price: <span class="price">{{ product.price }}</span></b
+            >Demo price: <span class="price">${{ product.price.toFixed(2) }}</span></b
           >
         </p>
         <input type="number" v-model="quantity" min="1" class="quantity-input" />
-        <button @click="addToCart">Add to Cart</button>
+        <button @click="addToCart">Add to demo cart</button>
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@
       <img src="../assets/404.jpg" alt="Product not found" />
     </div>
     <div class="product-info">
-      <h2>Oops! That product was not found...</h2>
+      <h2>This Atelier piece could not be found.</h2>
     </div>
   </div>
 </template>

@@ -7,6 +7,7 @@
 import { onMounted } from 'vue'
 import { useProductStore, useOrderStore } from '@/stores'
 import type { Product, Order } from '@/types'
+import { presentProduct } from '@/catalog'
 import TopNav from './components/TopNav.vue'
 
 const productStore = useProductStore()
@@ -18,7 +19,7 @@ onMounted(() => {
     fetch('/api/products')
       .then((response) => response.json())
       .then((data: Product[]) => {
-        productStore.addProducts(data)
+        productStore.addProducts(data.map(presentProduct))
         console.log(`Fetched ${data.length} products`)
       })
       .catch((error) => {
@@ -32,6 +33,7 @@ onMounted(() => {
       .then((response) => response.json())
       .then((data: Order[]) => {
         orderStore.addOrders(data)
+        orderStore.initialized = true
         console.log(`Fetched ${data.length} orders`)
       })
       .catch((error) => {
