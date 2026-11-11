@@ -1,168 +1,27 @@
 <template>
-  <!-- <div v-if="isLoading" class="loading-container">
-    <div class="loading-spinner"></div>
-    <p>Fetching orders...</p>
-  </div> -->
-
-  <div v-if="hasOrders" class="order-table">
-    <!-- Column headers -->
-    <div class="table-header">
-      <div class="column-id">Order ID</div>
-      <div class="column-customer">Customer ID</div>
-      <div class="column-status">Status</div>
-      <div class="column-price">Total</div>
-    </div>
-
-    <!-- Order rows -->
-    <div
-      v-for="order in orders"
-      :key="order.orderId"
-      class="table-row clickable"
-      @click="routeToOrder(order.orderId)"
-    >
-      <div class="column-id">{{ order.orderId }}</div>
-      <div class="column-customer">{{ order.customerId }}</div>
-      <div class="column-status">{{ order.status === 0 ? 'Pending' : 'Completed' }}</div>
-      <div class="column-price">{{ orderTotal(order) }}</div>
-    </div>
-  </div>
-
-  <!-- <div class="empty-list" v-else>
-    <h3>No orders available</h3>
-  </div> -->
-  <div v-else class="loading-container">
-    <div class="loading-spinner"></div>
-    <p>Fetching orders...</p>
-  </div>
+  <main class="page-shell">
+    <header class="page-heading"><div><p class="eyebrow">Live demo workflow</p><h1>Demo orders</h1><p>Review submitted showcase orders and mark only the ones you have discussed as complete.</p></div><span class="count-pill">{{ orders.length }} open</span></header>
+    <section v-if="hasOrders" class="orders-card" aria-label="Demo orders">
+      <div class="table-header"><span>Order</span><span>Demo customer</span><span>Status</span><span>Total</span><span class="sr-only">Open</span></div>
+      <router-link v-for="order in orders" :key="order.orderId" class="order-row" :to="`/order/${order.orderId}`"><strong>#{{ order.orderId }}</strong><span>{{ order.customerId }}</span><span class="status" :class="order.status === 0 ? 'pending' : 'completed'">{{ order.status === 0 ? 'Needs review' : 'Completed' }}</span><strong class="total">{{ formatPrice(orderTotal(order)) }}</strong><span class="open">Review <span aria-hidden="true">→</span></span></router-link>
+    </section>
+    <section v-else-if="orderStore.initialized" class="empty-state"><p class="eyebrow">All clear</p><h1>No demo orders yet</h1><p>New showcase orders will appear here as they are submitted.</p></section>
+    <section v-else class="empty-state" aria-live="polite"><p class="eyebrow">Loading</p><h1>Fetching demo orders</h1><p>Connecting to the order service…</p></section>
+  </main>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useOrderStore } from '@/stores'
-import { useRouter } from 'vue-router'
 import type { Order } from '@/types'
-
 const orderStore = useOrderStore()
-const router = useRouter()
-
-// const isLoading = computed(() => !orderStore.initialized)
 const orders = computed(() => orderStore.orders)
 const hasOrders = computed(() => orders.value.length > 0)
-
-const orderTotal = (order: Order) => {
-  return order.items.reduce((total, item) => total + item.quantity * item.price, 0).toFixed(2)
-}
-
-const routeToOrder = (orderId: string | number | undefined) => {
-  if (!orderId) {
-    console.warn('Cannot navigate to order with undefined ID')
-    return
-  }
-  router.push(`/order/${orderId}`)
-}
+const orderTotal = (order: Order): number => order.items.reduce((total, item) => total + item.quantity * item.price, 0)
+const formatPrice = (price: number): string => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price)
 </script>
 
 <style scoped>
-.loading-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  background-color: var(--card-background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  margin: 2rem auto;
-  width: 95vw;
-}
-
-.loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: var(--primary-color);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.order-table {
-  background-color: var(--card-background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  width: 95vw;
-  margin: 2rem auto;
-}
-
-.table-header,
-.table-row {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr 2.5fr 0.5fr;
-  align-items: center;
-  padding: 0.5rem 1rem;
-}
-
-.table-header {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  font-weight: bold;
-}
-
-.table-row {
-  border-bottom: 1px solid #eee;
-}
-
-.table-row:last-child {
-  border-bottom: none;
-}
-
-.clickable {
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.table-row:hover {
-  background-color: rgba(0, 123, 255, 0.1);
-}
-
-.column-id {
-  text-align: left;
-}
-
-.column-price {
-  text-align: right;
-}
-
-/* .empty-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  background-color: var(--card-background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  margin: 2rem auto;
-  width: 95vw;
-}
-
-@media (max-width: 768px) {
-  .page-container {
-    width: 95%;
-    padding: 0 1rem;
-  }
-
-  .table-header,
-  .table-row {
-    grid-template-columns: 0.2fr 1fr 2.5fr 0.5fr;
-    font-size: 0.9rem;
-  }
-} */
+.page-shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }.page-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; }.eyebrow { margin: 0 0 7px; color: var(--berry); font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }.page-heading h1, .empty-state h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; }.page-heading p:not(.eyebrow), .empty-state p:not(.eyebrow) { max-width: 620px; margin: 9px 0 0; color: var(--muted); line-height: 1.55; }.count-pill { padding: 8px 11px; border: 1px solid #d9c99e; border-radius: 999px; background: #fcf5df; color: #735d2d; font-size: .8rem; font-weight: 800; white-space: nowrap; }.orders-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--border-radius); background: var(--paper); box-shadow: var(--shadow); }.table-header, .order-row { display: grid; grid-template-columns: 1fr 1.4fr 1fr 110px 70px; gap: 20px; align-items: center; padding: 16px 22px; }.table-header { border-bottom: 1px solid var(--line); color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }.order-row { color: var(--ink); text-decoration: none; border-bottom: 1px solid #eee9de; }.order-row:last-child { border-bottom: 0; }.order-row:hover { background: #fbf5e8; }.status { width: fit-content; padding: 5px 8px; border-radius: 999px; font-size: .76rem; font-weight: 800; }.pending { background: #fce8cf; color: #885107; }.completed { background: #ddefda; color: #28573a; }.total, .open { text-align: right; }.open { color: var(--berry); font-weight: 800; }.empty-state { max-width: 620px; padding: 48px; border: 1px solid var(--line); border-radius: var(--border-radius); background: var(--paper); box-shadow: var(--shadow); }.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@media (max-width: 720px) { .page-shell { padding-top: 30px; }.page-heading { align-items: start; flex-direction: column; }.table-header { display: none; }.order-row { grid-template-columns: 1fr auto; padding: 16px; }.order-row > :nth-child(2), .open { display: none; }.status { grid-column: 1; grid-row: 2; }.total { grid-column: 2; grid-row: 1; } }
 </style>

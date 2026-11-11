@@ -1,145 +1,25 @@
 <template>
-  <div class="action-button">
-    <router-link to="/product/add">
-      <button class="button">Add Product</button>
-    </router-link>
-  </div>
-
-  <div v-if="products.length > 0" class="product-table">
-    <!-- Column headers -->
-    <div class="table-header">
-      <div class="column-id">Product ID</div>
-      <div class="column-image">Preview</div>
-      <div class="column-name">Product Name</div>
-      <div class="column-description">Description</div>
-      <div class="column-price">Price</div>
-    </div>
-
-    <!-- Product rows -->
-    <div
-      v-for="product in products"
-      :key="product.id"
-      class="table-row clickable"
-      @click="navigateToProduct(product.id)"
-    >
-      <div class="column-id">{{ product.id }}</div>
-      <div class="column-image"><img :src="product.image" :alt="product.name" /></div>
-      <div class="column-name">{{ product.name }}</div>
-      <div class="column-description">{{ product.description }}</div>
-      <div class="column-price">{{ product.price }}</div>
-    </div>
-  </div>
-
-  <div class="empty-list" v-else>
-    <h3>No products available</h3>
-    <p>Add your first product to get started</p>
-  </div>
+  <main class="page-shell">
+    <header class="page-heading"><div><p class="eyebrow">Catalog management</p><h1>Atelier collection</h1><p>Curate the capybara holiday collection shown in this conference demo.</p></div><router-link class="button" to="/product/add">Add product</router-link></header>
+    <section v-if="products.length" class="inventory-card" aria-label="Atelier collection inventory">
+      <div class="table-header"><span>Product</span><span>Collection note</span><span>Demo price</span><span class="sr-only">Open</span></div>
+      <router-link v-for="product in products" :key="product.id" class="inventory-row" :to="`/product/${product.id}`">
+        <span class="product-cell"><img :src="product.image" :alt="product.name" /><span><strong>{{ product.name }}</strong><small>Product {{ product.id }}</small></span></span><span class="description">{{ product.description || 'No collection note yet.' }}</span><strong class="price">{{ formatPrice(product.price) }}</strong><span class="open">Open <span aria-hidden="true">→</span></span>
+      </router-link>
+    </section>
+    <section v-else class="empty-state"><p class="eyebrow">Collection is empty</p><h1>Start the demo catalog</h1><p>Add the first capybara product to make the collection available for the storefront.</p><router-link class="button" to="/product/add">Add product</router-link></section>
+  </main>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useProductStore } from '@/stores'
-import { useRouter } from 'vue-router'
-
 const productStore = useProductStore()
-const router = useRouter()
-
 const products = computed(() => productStore.products)
-
-const navigateToProduct = (productId: string | number) => {
-  router.push(`/product/${productId}`)
-}
+const formatPrice = (price: number): string => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price)
 </script>
 
 <style scoped>
-.action-button {
-  text-align: right;
-  margin: 1.5rem;
-}
-
-.product-table {
-  background-color: var(--card-background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  width: 95vw;
-  margin: 2rem auto;
-}
-
-.table-header,
-.table-row {
-  display: grid;
-  grid-template-columns: 0.45fr 0.55fr 1fr 2.5fr 0.6fr;
-  align-items: center;
-  padding: 0.5rem 1rem;
-}
-
-.table-header {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  font-weight: bold;
-}
-
-.table-row {
-  border-bottom: 1px solid #eee;
-}
-
-.table-row:last-child {
-  border-bottom: none;
-}
-
-.clickable {
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.table-row:hover {
-  background-color: rgba(0, 123, 255, 0.1);
-}
-
-.column-id {
-  text-align: left;
-}
-
-.column-name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-align: left;
-  text-overflow: ellipsis;
-}
-
-.column-description {
-  white-space: nowrap;
-  overflow: hidden;
-  text-align: left;
-  text-overflow: ellipsis;
-}
-
-.column-price {
-  text-align: right;
-}
-
-.column-image img { width: 42px; height: 42px; object-fit: cover; border-radius: 8px; display: block; }
-
-.empty-list {
-  text-align: center;
-  padding: 2rem;
-  background-color: var(--card-background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  margin: 1rem 0;
-}
-
-@media (max-width: 768px) {
-  .page-container {
-    width: 95%;
-    padding: 0 1rem;
-  }
-
-  .table-header,
-  .table-row {
-    grid-template-columns: 0.2fr 1fr 2.5fr 0.5fr;
-    font-size: 0.9rem;
-  }
-}
+.page-shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }.page-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; }.eyebrow { margin: 0 0 7px; color: var(--berry); font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }.page-heading h1, .empty-state h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; }.page-heading p:not(.eyebrow), .empty-state p:not(.eyebrow) { max-width: 620px; margin: 9px 0 0; color: var(--muted); line-height: 1.55; }.inventory-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--border-radius); background: var(--paper); box-shadow: var(--shadow); }.table-header, .inventory-row { display: grid; grid-template-columns: minmax(220px, 1.2fr) minmax(230px, 2fr) 110px 70px; gap: 20px; align-items: center; padding: 15px 22px; }.table-header { border-bottom: 1px solid var(--line); color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }.inventory-row { color: var(--ink); text-decoration: none; border-bottom: 1px solid #eee9de; }.inventory-row:last-child { border-bottom: 0; }.inventory-row:hover { background: #fbf5e8; }.product-cell { display: flex; align-items: center; gap: 12px; min-width: 0; }.product-cell img { flex: 0 0 auto; width: 48px; height: 48px; border-radius: 8px; object-fit: cover; }.inventory-row strong { display: block; }.inventory-row small { display: block; margin-top: 4px; color: var(--muted); }.description { overflow: hidden; color: var(--muted); line-height: 1.4; text-overflow: ellipsis; white-space: nowrap; }.price { text-align: right; }.open { color: var(--berry); font-weight: 800; text-align: right; }.empty-state { max-width: 620px; padding: 48px; border: 1px solid var(--line); border-radius: var(--border-radius); background: var(--paper); box-shadow: var(--shadow); }.empty-state .button { margin-top: 22px; }.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@media (max-width: 760px) { .page-shell { padding-top: 30px; }.page-heading { align-items: start; flex-direction: column; }.table-header { display: none; }.inventory-row { grid-template-columns: 1fr auto; gap: 12px; padding: 15px; }.product-cell { grid-column: 1; grid-row: 1; }.description, .open { display: none; }.price { grid-column: 2; grid-row: 1; } }
 </style>

@@ -33,6 +33,7 @@ onMounted(() => {
       .then((response) => response.json())
       .then((data: Order[]) => {
         orderStore.addOrders(data)
+        orderStore.initialized = true
         console.log(`Fetched ${data.length} orders`)
       })
       .catch((error) => {

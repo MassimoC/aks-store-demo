@@ -1,203 +1,30 @@
 <template>
-  <nav>
-    <div class="logo">
-      <router-link to="/">
-        <span class="atelier-mark" aria-hidden="true">◒</span>
+  <header class="console-header">
+    <nav aria-label="Atelier Console navigation">
+      <router-link class="brand" to="/orders" @click="closeNav">
+        <span class="atelier-mark" aria-hidden="true">SC</span>
+        <span><strong>Santa's Capybara Atelier</strong><small>Atelier Console</small></span>
       </router-link>
-      <span class="logo-text">Atelier Console</span>
-    </div>
-    <ul class="nav-links" :class="{ 'nav-links--open': isNavOpen }">
-      <li><router-link to="/orders" @click="closeNav">Orders</router-link></li>
-      <li><router-link to="/products" @click="closeNav">Collection</router-link></li>
-    </ul>
-    <button class="hamburger" @click="toggleNav">
-      <span class="hamburger-icon"></span>
-    </button>
-  </nav>
+      <button class="hamburger" type="button" :aria-expanded="isNavOpen" aria-controls="console-navigation" aria-label="Toggle navigation" @click="toggleNav"><span aria-hidden="true">Menu</span></button>
+      <ul id="console-navigation" class="nav-links" :class="{ 'nav-links--open': isNavOpen }">
+        <li><router-link to="/orders" @click="closeNav">Demo orders</router-link></li>
+        <li><router-link to="/products" @click="closeNav">Atelier collection</router-link></li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-
 const isNavOpen = ref(false)
-
-function toggleNav(): void {
-  isNavOpen.value = !isNavOpen.value
-}
-
-function closeNav(): void {
-  isNavOpen.value = false
-}
+const toggleNav = (): void => { isNavOpen.value = !isNavOpen.value }
+const closeNav = (): void => { isNavOpen.value = false }
 </script>
 
 <style scoped>
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #1a472a 100%);
-  color: #fff;
-  padding-top: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  border-bottom: 3px solid var(--gold-accent);
-}
-
-nav img {
-  padding-right: 15px;
-  width: 100px;
-  height: auto;
-  align-self: center;
-}
-
-.atelier-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid var(--gold-accent);
-  border-radius: 50%;
-  color: var(--gold-accent);
-}
-
-.logo-text {
-  color: #fdf6e3;
-  font-family: Georgia, serif;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-  background-color: rgba(212, 175, 55, 0.3);
-  color: var(--gold-accent);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  margin-top: -40px;
-}
-
-.hamburger-icon {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background-color: #fff;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.hamburger-icon::before,
-.hamburger-icon::after {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 2px;
-  background-color: #fff;
-  position: absolute;
-  left: 0;
-}
-
-.hamburger-icon::before {
-  top: -6px;
-}
-
-.hamburger-icon::after {
-  bottom: -6px;
-}
-
-/* Snowflakes animation */
-.snowflakes {
-  position: fixed;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 100;
-  overflow: hidden;
-}
-
-.snowflake {
-  position: absolute;
-  top: -20px;
-  color: var(--accent-color);
-  font-size: 1.2rem;
-  opacity: 0.7;
-  animation: snowfall linear infinite;
-}
-
-.snowflake:nth-child(1) { left: 5%; animation-duration: 12s; animation-delay: 0s; font-size: 1rem; }
-.snowflake:nth-child(2) { left: 15%; animation-duration: 10s; animation-delay: 2s; font-size: 1.4rem; }
-.snowflake:nth-child(3) { left: 30%; animation-duration: 14s; animation-delay: 4s; font-size: 0.9rem; }
-.snowflake:nth-child(4) { left: 45%; animation-duration: 11s; animation-delay: 1s; font-size: 1.2rem; }
-.snowflake:nth-child(5) { left: 60%; animation-duration: 13s; animation-delay: 3s; font-size: 1.1rem; }
-.snowflake:nth-child(6) { left: 75%; animation-duration: 9s; animation-delay: 5s; font-size: 1.3rem; }
-.snowflake:nth-child(7) { left: 85%; animation-duration: 15s; animation-delay: 2s; font-size: 1rem; }
-.snowflake:nth-child(8) { left: 95%; animation-duration: 10s; animation-delay: 0s; font-size: 1.5rem; }
-
-@keyframes snowfall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0.3;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
-    padding: 1rem;
-  }
-
-  .nav-links--open {
-    display: block;
-  }
-
-  .nav-links--open li {
-    padding: 0.5rem 0;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
+.console-header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid rgba(184,145,72,.42); background: rgba(20,55,42,.97); box-shadow: 0 10px 28px rgba(22,43,34,.16); }
+nav { width: min(1180px, calc(100% - 32px)); min-height: 72px; margin: auto; display: flex; align-items: center; gap: 24px; }
+.brand { display: inline-flex; align-items: center; gap: 11px; color: #fffaf0; text-decoration: none; margin-right: auto; }.brand strong, .brand small { display: block; }.brand strong { font-family: Georgia, 'Times New Roman', serif; font-size: 1rem; }.brand small { margin-top: 2px; color: #d9c69d; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.atelier-mark { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid #d8b56a; border-radius: 50%; color: #f6e7b4; font: 700 .7rem/1 Georgia, serif; }.nav-links { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }.nav-links a { display: block; padding: 10px 13px; border-radius: 7px; color: #f9f1dd; text-decoration: none; font-size: .9rem; font-weight: 700; }.nav-links a:hover, .nav-links a.router-link-active { background: rgba(255,248,229,.12); color: #ffe6a0; }.hamburger { display: none; border: 1px solid rgba(255,255,255,.35); border-radius: 6px; background: transparent; color: #fffaf0; padding: 8px 10px; font: inherit; }
+@media (max-width: 680px) { nav { min-height: 64px; }.hamburger { display: block; }.nav-links { display: none; position: absolute; top: 100%; right: 16px; left: 16px; padding: 8px; border: 1px solid rgba(184,145,72,.45); border-radius: 8px; background: #153e30; box-shadow: 0 12px 28px rgba(0,0,0,.2); }.nav-links--open { display: block; }.nav-links a { padding: 12px; }.brand strong { font-size: .9rem; } }
 </style>
