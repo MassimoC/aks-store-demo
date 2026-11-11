@@ -143,6 +143,7 @@ test-results/
 playwright-report/
 playwright/.cache/
 .env.playwright.local
+.worktrees/
 
 # custom helm values
 custom-values.yaml
