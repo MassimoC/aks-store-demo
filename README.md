@@ -36,6 +36,10 @@ This application is inspired by another demo app called [Red Dog](https://github
 > [!NOTE]
 > This is not meant to be an example of perfect code to be used in production, but more about showing a realistic application running in AKS. 
 
+## 📚 Documentation
+
+For comprehensive documentation, deployment guides, and troubleshooting, visit the **[AKS Store Demo Documentation](https://massimoc.github.io/aks-store-demo)**.
+
 <!-- 
 To walk through a quick deployment of this application, see the [AKS Quickstart](https://learn.microsoft.com/azure/aks/learn/quick-kubernetes-deploy-cli).
 

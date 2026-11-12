@@ -1,6 +1,14 @@
+---
+layout: default
+title: Azure Developer CLI Guide
+nav_order: 7
+---
+
 # Deploying the AKS Store Demo app to Azure using Azure Developer CLI
 
 Using the [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview), you can deploy this solution to Azure in minutes. By default it ships prebuilt container images and RabbitMQ/MongoDB; you can also opt into Azure Service Bus and Azure Cosmos DB, and even build app images from source.
+
+> For a high-level deployment overview, see the [Deployment Guide](deployment.html).
 
 ## Prerequisites
 
@@ -168,7 +176,7 @@ After you provide the information, `azd up` registers providers/features and ins
 This will take a few minutes to complete.
 
 > [!NOTE]
-> Infra defaults to [Terraform](../infra/terraform). To use [Bicep](../infra/bicep) instead, open `azure.yaml` and change:
+> Infra defaults to [Terraform](https://github.com/MassimoC/aks-store-demo/tree/main/infra/terraform). To use [Bicep](https://github.com/MassimoC/aks-store-demo/tree/main/infra/bicep) instead, open `azure.yaml` and change:
 >
 > - `infra.provider: bicep`
 > - `infra.path: infra/bicep`
