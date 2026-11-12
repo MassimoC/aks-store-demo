@@ -22,6 +22,8 @@ describe('ShoppingCartView', () => {
     const wrapper = mountCart()
 
     expect(wrapper.get('.order-title').text()).toBe('Your order')
+    expect(wrapper.find('.order-paper').exists()).toBe(true)
+    expect(wrapper.get('.order-reference').text()).toMatch(/Order ref/)
     expect(wrapper.get('.order-summary').text()).toContain('Illustrative')
     expect(wrapper.find('[aria-label="Decrease quantity for Fireside Capybara Plush"]').exists()).toBe(true)
     expect(wrapper.find('[aria-label="Remove Fireside Capybara Plush from order"]').exists()).toBe(true)
