@@ -23,7 +23,7 @@ describe('ShoppingCartView', () => {
 
     expect(wrapper.get('.order-title').text()).toBe('Your order')
     expect(wrapper.get('.order-summary').text()).toContain('Illustrative')
-    expect(wrapper.get('[aria-label="Decrease quantity for Fireside Capybara Plush"]').exists()).toBe(true)
-    expect(wrapper.get('[aria-label="Remove Fireside Capybara Plush from order"]').exists()).toBe(true)
+    expect(wrapper.find('[aria-label="Decrease quantity for Fireside Capybara Plush"]').exists()).toBe(true)
+    expect(wrapper.find('[aria-label="Remove Fireside Capybara Plush from order"]').exists()).toBe(true)
   })
 })
