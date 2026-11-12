@@ -1,13 +1,13 @@
 <template>
   <main class="page-shell">
-    <header class="page-heading"><div><p class="eyebrow">Catalog management</p><h1>Atelier collection</h1><p>Curate the capybara holiday collection shown in this conference demo.</p></div><router-link class="button" to="/product/add">Add product</router-link></header>
+    <header class="page-heading"><div><p class="eyebrow">Catalog management</p><h1>Atelier collection</h1><p>Curate the capybara holiday collection.</p></div><router-link class="button" to="/product/add">Add product</router-link></header>
     <section v-if="products.length" class="inventory-card" aria-label="Atelier collection inventory">
-      <div class="table-header"><span>Product</span><span>Collection note</span><span>Demo price</span><span class="sr-only">Open</span></div>
+      <div class="table-header"><span>Product</span><span>Collection note</span><span>Price</span><span class="sr-only">Open</span></div>
       <router-link v-for="product in products" :key="product.id" class="inventory-row" :to="`/product/${product.id}`">
         <span class="product-cell"><img :src="product.image" :alt="product.name" /><span><strong>{{ product.name }}</strong><small>Product {{ product.id }}</small></span></span><span class="description">{{ product.description || 'No collection note yet.' }}</span><strong class="price">{{ formatPrice(product.price) }}</strong><span class="open">Open <span aria-hidden="true">→</span></span>
       </router-link>
     </section>
-    <section v-else class="empty-state"><p class="eyebrow">Collection is empty</p><h1>Start the demo catalog</h1><p>Add the first capybara product to make the collection available for the storefront.</p><router-link class="button" to="/product/add">Add product</router-link></section>
+    <section v-else class="empty-state"><p class="eyebrow">Collection is empty</p><h1>Start the catalog</h1><p>Add the first capybara product to make the collection available for the storefront.</p><router-link class="button" to="/product/add">Add product</router-link></section>
   </main>
 </template>
 

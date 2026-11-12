@@ -5,7 +5,7 @@
       <aside class="collection-index">
         <p class="section-label">The collection</p>
         <h1>Holiday goods for unhurried winters.</h1>
-        <p>Fourteen capybara keepsakes, assembled for this AKS Store Demo.</p>
+        <p>Fourteen capybara keepsakes, assembled to make your Christmas magical.</p>
         <strong>{{ products.length.toString().padStart(2, '0') }} Atelier pieces</strong>
       </aside>
       <article class="feature-detail">

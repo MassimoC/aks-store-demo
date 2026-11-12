@@ -10,11 +10,11 @@
       <div class="product-controls">
         <p>
           <b
-            >Demo price: <span class="price">${{ product.price.toFixed(2) }}</span></b
+            >Price: <span class="price">${{ product.price.toFixed(2) }}</span></b
           >
         </p>
         <input type="number" v-model="quantity" min="1" class="quantity-input" />
-        <button @click="addToCart">Add to demo cart</button>
+        <button @click="addToCart">Add to cart</button>
       </div>
     </div>
   </div>

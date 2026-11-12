@@ -4,7 +4,7 @@
       <div>
         <p class="eyebrow">Catalog management</p>
         <h1>{{ route.params.id ? 'Edit atelier product' : 'Add atelier product' }}</h1>
-        <p>Update the conference-demo catalog without changing the product service contract.</p>
+        <p>Update the Catalog without changing the product service contract.</p>
       </div>
       <button @click="saveProduct" class="button">Save product</button>
     </header>

@@ -1,7 +1,7 @@
 <template>
   <main class="page-shell" v-if="productExists">
     <router-link class="back-link" to="/products">← Back to collection</router-link>
-    <section class="product-detail"><figure><img :src="product?.image" :alt="product?.name" /></figure><div class="product-info"><p class="eyebrow">Atelier product {{ product?.id }}</p><h1>{{ product?.name }}</h1><p class="price">{{ formatPrice(Number(product?.price)) }}</p><p class="description">{{ product?.description }}</p><dl><div><dt>Demo role</dt><dd>Conference collection item</dd></div><div><dt>Keywords</dt><dd>{{ product?.tags || 'Not tagged' }}</dd></div></dl><router-link class="button" :to="`/product/${productId}/edit`">Edit product</router-link></div></section>
+    <section class="product-detail"><figure><img :src="product?.image" :alt="product?.name" /></figure><div class="product-info"><p class="eyebrow">Atelier product {{ product?.id }}</p><h1>{{ product?.name }}</h1><p class="price">{{ formatPrice(Number(product?.price)) }}</p><p class="description">{{ product?.description }}</p><dl><div><dt>Role</dt><dd>Conference collection item</dd></div><div><dt>Keywords</dt><dd>{{ product?.tags || 'Not tagged' }}</dd></div></dl><router-link class="button" :to="`/product/${productId}/edit`">Edit product</router-link></div></section>
   </main>
   <main v-else class="empty-state"><p class="eyebrow">Product unavailable</p><h1>We could not find this catalog item</h1><router-link class="button" to="/products">Return to collection</router-link></main>
 </template>

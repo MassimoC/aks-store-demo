@@ -1,12 +1,12 @@
 <template>
   <main class="page-shell">
-    <header class="page-heading"><div><p class="eyebrow">Live demo workflow</p><h1>Demo orders</h1><p>Review submitted showcase orders and mark only the ones you have discussed as complete.</p></div><span class="count-pill">{{ orders.length }} open</span></header>
-    <section v-if="hasOrders" class="orders-card" aria-label="Demo orders">
-      <div class="table-header"><span>Order</span><span>Demo customer</span><span>Status</span><span>Total</span><span class="sr-only">Open</span></div>
+    <header class="page-heading"><div><p class="eyebrow">Live workflow</p><h1>Orders</h1><p>Review submitted showcase orders and mark only the ones you have discussed as complete.</p></div><span class="count-pill">{{ orders.length }} open</span></header>
+    <section v-if="hasOrders" class="orders-card" aria-label="Orders">
+      <div class="table-header"><span>Order</span><span>Customer</span><span>Status</span><span>Total</span><span class="sr-only">Open</span></div>
       <router-link v-for="order in orders" :key="order.orderId" class="order-row" :to="`/order/${order.orderId}`"><strong>#{{ order.orderId }}</strong><span>{{ order.customerId }}</span><span class="status" :class="order.status === 0 ? 'pending' : 'completed'">{{ order.status === 0 ? 'Needs review' : 'Completed' }}</span><strong class="total">{{ formatPrice(orderTotal(order)) }}</strong><span class="open">Review <span aria-hidden="true">→</span></span></router-link>
     </section>
-    <section v-else-if="orderStore.initialized" class="empty-state"><p class="eyebrow">All clear</p><h1>No demo orders yet</h1><p>New showcase orders will appear here as they are submitted.</p></section>
-    <section v-else class="empty-state" aria-live="polite"><p class="eyebrow">Loading</p><h1>Fetching demo orders</h1><p>Connecting to the order service…</p></section>
+    <section v-else-if="orderStore.initialized" class="empty-state"><p class="eyebrow">All clear</p><h1>No orders yet</h1><p>New showcase orders will appear here as they are submitted.</p></section>
+    <section v-else class="empty-state" aria-live="polite"><p class="eyebrow">Loading</p><h1>Fetching orders</h1><p>Connecting to the order service…</p></section>
   </main>
 </template>
 
