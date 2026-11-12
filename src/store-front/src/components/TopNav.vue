@@ -68,7 +68,7 @@ nav {
 }
 
 .brand-name {
-  font-family: Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(1rem, 2vw, 1.45rem);
   font-weight: 700;
 }
