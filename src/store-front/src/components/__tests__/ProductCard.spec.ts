@@ -19,5 +19,6 @@ describe('ProductCard', () => {
 
     expect(wrapper.classes()).toContain('product-card--added')
     expect(wrapper.get('.add-button').text()).toContain('Added to cart')
+    expect(wrapper.find('.add-button svg').exists()).toBe(false)
   })
 })

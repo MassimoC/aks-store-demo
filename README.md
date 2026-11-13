@@ -80,9 +80,9 @@ This application uses public images stored in GitHub Container Registry and Micr
 This deployment deploys everything except the `ai-service` that integrates OpenAI. If you want to try integrating the OpenAI component, take a look at this article: [Deploy an application that uses OpenAI on Azure Kubernetes Service (AKS)](https://learn.microsoft.com/azure/aks/open-ai-quickstart?tabs=aoai).
 
 ```bash
-kubectl create ns pets
+kubectl create ns capybara
 
-kubectl apply -f https://raw.githubusercontent.com/Azure-Samples/aks-store-demo/main/aks-store-all-in-one.yaml -n pets
+kubectl apply -f https://raw.githubusercontent.com/massimoc/aks-store-demo/main/aks-store-all-in-one.yaml -n capybara
 ```
 
 ## Run the app locally
