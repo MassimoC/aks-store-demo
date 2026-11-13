@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap');
 
-:root { font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif; color: #203c31; background: #f5f0e5; --pine: #14372a; --berry: #a93d42; --berry-deep: #832d32; --brass: #b89148; --paper: #fffdf7; --ink: #203c31; --muted: #66766d; --line: #ded8ca; --card-background: var(--paper); --primary-color: var(--pine); --secondary-color: #fffdf7; --accent-color: var(--berry); --accent-color-dark: var(--berry-deep); --border-radius: 12px; --shadow: 0 12px 32px rgba(34,55,44,.08); }
+:root { font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif; color: #203c31; background: #f5f0e5; --pine: #14372a; --berry: #a93d42; --berry-deep: #832d32; --brass: #b89148; --paper: #fffdf7; --ink: #203c31; --muted: #66766d; --line: #ded8ca; --card-background: var(--paper); --primary-color: var(--pine); --secondary-color: #fffdf7; --accent-color: var(--berry); --accent-color-dark: var(--berry-deep); --border-radius: 12px; --shadow: 0 12px 32px rgba(34,55,44,.08); }
 * { box-sizing: border-box; }
 body { min-width: 320px; min-height: 100vh; margin: 0; background: #f5f0e5; color: var(--ink); }
 button, input, textarea { font: inherit; }
